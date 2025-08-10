@@ -339,4 +339,44 @@ export default function MusicPlayer() {
             <Card className="bg-slate-800/50 border-slate-700 p-6">
               <h2 className="text-xl font-semibold text-white mb-4">Playlist</h2>
               <div className="space-y-2">
-                {mockTracks.map((track, index
+                              {mockTracks.map((track, index) => (
+                  <div
+                    key={track.id}
+                    className={`cursor-pointer p-3 rounded-md ${
+                      index === currentTrack
+                        ? 'bg-gradient-to-r from-purple-500 to-cyan-500 text-white'
+                        : 'text-slate-300 hover:bg-slate-700'
+                    }`}
+                    onClick={() => playTrack(index)}
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        playTrack(index);
+                      }
+                    }}
+                    role="button"
+                    aria-current={index === currentTrack ? 'true' : 'false'}
+                  >
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <p className="font-medium">{track.title}</p>
+                        <p className="text-sm text-slate-400">{track.artist}</p>
+                      </div>
+                      <p className="text-xs text-slate-400">{track.duration}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {isFullscreen && <FullScreenPlayer />}
+      </AnimatePresence>
+
+      <MiniPlayer />
+    </div>
+  );
+}
