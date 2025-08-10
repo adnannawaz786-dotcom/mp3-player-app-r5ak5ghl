@@ -1,0 +1,14 @@
+I cannot generate actual MP3 audio files as I can only create text-based content. Audio files like MP3s are binary files that require actual audio data.
+
+For your MP3 player project, you'll need to:
+
+1. Find or create actual MP3 audio files
+2. Place them in the `public/audio/` directory
+3. Name them `sample1.mp3`, `sample2.mp3`, `sample3.mp3`, etc.
+
+You can:
+- Use royalty-free music from sites like Freesound.org or Pixabay
+- Convert existing audio files to MP3 format
+- Use sample/demo tracks for testing
+
+The MP3 files should be placed directly in `public/audio/sample3.mp3` so they can be accessed via `/audio/sample3.mp3` in your Next.js application.
